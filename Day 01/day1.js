@@ -22,7 +22,6 @@ let student = {
   address: "XYZ ",
 };
 let marks = [70, 56, 77, 90, 45, 87];
-
 console.log(typeof number);
 console.log(typeof fullName);
 console.log(typeof isCompleted);
@@ -35,7 +34,6 @@ let age = 20;
 console.log(age);
 age = 23;
 console.log(age);
-
 // ? Activity 5: Understanding const:
 // ? Task 6:
 const COLOR = "red";
