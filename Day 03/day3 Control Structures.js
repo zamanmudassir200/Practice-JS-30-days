@@ -18,6 +18,22 @@
 // }
 // ? Activity 2: Nested if-else Statement
 // ? Task 3:
+let a = 70,
+  b = 90,
+  c = 80;
+if (a >= b) {
+  if (a >= c) {
+    console.log("A is greatest number");
+  } else {
+    console.log("C is the greatest number");
+  }
+} else {
+  if (b >= c) {
+    console.log("B is the greatest number");
+  } else {
+    console.log("C is the largest number");
+  }
+}
 
 // ? Activity 3: Switch Case:
 // ? Task 4:
@@ -46,4 +62,45 @@ switch (day) {
     break;
   default:
     console.log("Invalid Day");
+}
+
+let score = 56;
+switch (true) {
+  case score > 80 && score <= 100:
+    console.log("A grade");
+    break;
+  case score > 70 && score <= 80:
+    console.log("B grade");
+    break;
+  case score > 60 && score <= 70:
+    console.log("C grade");
+    break;
+  case score > 50 && score <= 60:
+    console.log("D grade");
+    break;
+  default:
+    console.log("F grade");
+}
+
+// ? Activity 4: Conditional (Ternary) Operator
+// ? Task 6:
+let number = 2;
+let isEven = number % 2 === 0 ? "Number is Even" : "Number is Odd";
+console.log(isEven);
+
+// ? Activity 5: Combining Conditions
+// ? Task 7:
+let year = 2019;
+if (year % 4 === 0) {
+  if (year % 100 === 0) {
+    if (year % 400 === 0) {
+      console.log(`${year} is a leap year`);
+    } else {
+      console.log(`${year} is not a leap year`);
+    }
+  } else {
+    console.log(`${year} is a leap year`);
+  }
+} else {
+  console.log(`${year} is not a leap year`);
 }
