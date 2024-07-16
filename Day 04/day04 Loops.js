@@ -33,24 +33,24 @@
 // } while (num <= 5);
 
 // ? Task 6:
-// let number = 3;
-// let i = 1;
-// let fact = 0;
-// do {
-//   fact += number * i;
-//   i++;
-// } while (i <= number - 1);
-// console.log(fact);
+let number = 5;
+let i = number - 1;
+let fact = 1;
+do {
+  let mul = number * i;
+
+  i--;
+} while (i >= 1);
+console.log(fact);
 
 // ? Task 7:
 // let star = " ";
 // for (let i = 1; i <= 5; i++) {
-//   //   star += "*";
 //   for (let j = i; j <= i; j++) {
-//     star += "*";
+//     star += "* ";
+//     console.log(star);
 //   }
 // }
-// console.log(star);
 
 // ? Task 8:
 
