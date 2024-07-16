@@ -34,11 +34,10 @@
 
 // ? Task 6:
 let number = 5;
-let i = number - 1;
+let i = number;
 let fact = 1;
 do {
-  let mul = number * i;
-
+  fact *= i;
   i--;
 } while (i >= 1);
 console.log(fact);
