@@ -63,16 +63,128 @@
 
 // ? 8. Chain two promises where the first resolves with a string 'Hello', and the second appends ', World!' to the string.
 
-const promise8 = new Promise((res, rej) => {
-  res("Hello ");
-})
-  .then((str) => str + "World!")
-  .then((output) => console.log(output));
+// const promise8 = new Promise((res, rej) => {
+//   res("Hello ");
+// })
+//   .then((str) => str + "World!")
+//   .then((output) => console.log(output));
 
 // ? 9. Chain three promises where the first resolves with a number, the second doubles the number,  and the third converts the result to a string.
-const promise9 = new Promise((res, rej) => {
-  res(4);
+// const promise9 = new Promise((res, rej) => {
+//   res(4);
+// })
+//   .then((num) => num * 2)
+//   .then((double) => String(double))
+//   .then((result) => console.log(result, typeof result));
+
+// ? 10. Chain four promises where each promise resolves with an incremented value starting from 1.
+// let count = 1;
+
+// const promise10 = new Promise((res, rej) => {
+//   res(count);
+// })
+//   .then((value) => {
+//     return ++count;
+//   })
+//   .then((value1) => {
+//     return ++count;
+//   })
+//   .then((value2) => {
+//     return ++count;
+//   })
+//   .then((value3) => {
+//     console.log("Incremented Value: " + value3); // This will log the final incremented value.
+//   });
+
+//   ? 11. Create a promise that resolves with 'All good!' if the number is even and rejects with 'Odd number!' if the number is odd.
+// let num = 7;
+// const promise11 = new Promise((res, rej) => {
+//   if (num % 2 === 0) {
+//     res("All good!");
+//   } else {
+//     rej("Odd Number!");
+//   }
+// })
+//   .then((even) => console.log(`${num} is Even number ` + even))
+//   .catch((err) => console.log(`${num} is ` + err));
+
+// ? 12. Create a promise that resolves with 'Positive number!' if the number is positive and rejects with 'Negative number!' if the number is negative.
+// let number = -7;
+// const promise12 = new Promise((res, rej) => {
+//   if (number > 0) {
+//     res("Positive number!");
+//   } else {
+//     rej("Negative number!");
+//   }
+// })
+//   .then((positive) => console.log(`${number} is :` + positive))
+//   .catch((err) => console.log(`${number} is : ` + err));
+
+// ? 13. Create a promise that simulates an API call that sometimes fails and use `.catch()` to handle the error.
+const promise13 = new Promise((res, rej) => {
+  const success = Math.random() > 0.5; // Simulate a 50% chance of failure
+  if (success) {
+    res("https://picsum.photos/v2/list");
+  } else {
+    rej("Error Occurred!");
+  }
 })
-  .then((num) => num * 2)
-  .then((double) => String(double))
-  .then((result) => console.log(result, typeof result));
+  .then((api) => console.log(api))
+  .catch((err) => console.log(err));
+
+// ? 14. Chain two promises where the second promise only executes if the first one resolves successfully;
+let firstName = "M.MUDASSIR ";
+let lastName = "Zaman";
+
+const promise14 = new Promise((res, rej) => {
+  res(`${firstName}`);
+})
+  .then((frsName) => {
+    return frsName + lastName;
+  })
+  .then((name) => {
+    console.log(name);
+  });
+
+// ? 15. Create a promise that rejects if a given string is empty and resolves otherwise.
+let str = "";
+const promise15 = new Promise((res, rej) => {
+  if (str !== "") res("the String contains " + str);
+  else rej("The given str is empty");
+})
+  .then((string) => console.log(string))
+  .catch((err) => console.log(err));
+// ? 16. Create three promises that resolve with different values after 1, 2, and 3 seconds respectively, and use `Promise.all()` to log the results.
+const promise16a = new Promise((res, rej) => {
+  setTimeout(() => {
+    res("First promise resolved");
+  }, 1000);
+});
+const promise16b = new Promise((res, rej) => {
+  setTimeout(() => {
+    res("Second promise resolved");
+  }, 2000);
+});
+const promise16c = new Promise((res, rej) => {
+  setTimeout(() => {
+    res("Third promise resolved");
+  }, 3000);
+});
+
+Promise.all([promise16a, promise16b, promise16c])
+  .then((results) => console.log(results))
+  .catch((err) => {
+    console.log(err);
+  });
+// ? 17. Create two promises that resolve with the values 'First' and 'Second', and use `Promise.all()` to log the combined results.
+const promise17a = new Promise((res, rej) => {
+  res("First");
+});
+const promise17b = new Promise((res, rej) => {
+  res("Second");
+});
+Promise.all([promise17a, promise17b])
+  .then((output) => console.log(output))
+  .catch((err) => console.log(err));
+
+// ? 18. Create three promises where one rejects after 2 seconds, and use `Promise.all()` to handle the rejection.
